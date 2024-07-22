@@ -1,13 +1,12 @@
-# Page-analyzer
+# Asynchronous page-analyzer
 # About
 Service for checking URLs
-/ Сервис проверки веб-сайтов /
 
 ![Homepage](https://github.com/prStudentka/hexlet-git/blob/main/pr83/flask.jpg?raw=true)
 
      Image 1 - Homepage Page-analyzer
 
-# System requirements / Системные требования
+# System requirements
 - python = "^3.10"
 - flask = "^2.3.3"
 - python-dotenv = "^1.0.0"
@@ -22,11 +21,12 @@ Service for checking URLs
 - celery = "^5.4.0"
 - redis = "^5.0.7"
 
-# Install / Как запустить
+# Install
 1) git clone [Repository](https://github.com/prStudentka/async_page_analyzer)
 2) make install
 3) created in the root directory of the project ".env" with variables:
    / создать в проекте файл ".env" c переменными:/
    - SECRET_KEY
    - DATABASE_URL
+   - REDIS_URL
 5) make start
