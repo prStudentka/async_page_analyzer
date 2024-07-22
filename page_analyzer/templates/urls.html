@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-lg mt-3">
+
+  <h1>Сайты</h1>
+
+  <form action={{ url_for('process_urls_check') }} method='post'>
+    <input type='submit' class="btn btn-primary" value="Проверить все сайты">
+  </form>
+  <br>
+  <div class="table-responsive">
+
+    <table class="table table-bordered table-hover text-nowrap" data-test="urls">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Имя</th>
+          <th>Последняя проверка</th>
+          <th>Код ответа</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for url in content %}
+        <tr>
+          <td> {{ url.id }} </td>
+          <td>
+            <a href="{{ url_for('url_id', id=url.id) }}">{{url.name}}</a>
+          </td>
+          <td>
+            {{ url.created_at or ''}}
+          </td>
+          <td>
+            {{ url.status_code or ''}}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
